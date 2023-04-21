@@ -1,0 +1,26 @@
+@import '../../index.scss';
+.spanbg{
+    background-color: $text-color;
+    color: black;
+    width: fit-content;
+  font-size: 12px;
+    
+}
+p{
+    font-size: 14px;
+}
+.box{
+  transition: .4s;
+  -webkit-transition: .4s;
+  -moz-transition: .4s;
+  -ms-transition: .4s;
+  -o-transition: .4s;
+
+}
+.box:hover{
+  transform: scale(1.05);
+  -webkit-transform: scale(1.05);
+  -moz-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  -o-transform: scale(1.05);
+}
