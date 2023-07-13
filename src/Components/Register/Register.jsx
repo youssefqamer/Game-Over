@@ -30,11 +30,12 @@ export default function Register() {
     if(validateresponse.error){
       seterrorList(validateresponse.error.details)
     }else{
-      let {data}=await axios.post('https://sticky-note-fe.vercel.app/signup',user)
+      let {data}=await axios.post('https://movies-api.routemisr.com/signup',user)
       setIsLoading(false)
         if(data.message==='success'){
           goToLogin()
         }else{
+          console.log(data.message);
           seterrorMsg(data.message)
           showErrors()
         }
@@ -68,7 +69,7 @@ export default function Register() {
     <div className="row my-5 py-5">
       <div className="col-md-6 mb-2 ">
         <div className="img">
-          <img src={img} alt="" className='w-100'/>
+        <img src={img} alt="" className='w-100'/>
         </div>
       </div>
       <div className="col-md-6">

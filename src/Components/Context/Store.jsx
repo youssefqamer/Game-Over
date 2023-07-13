@@ -14,7 +14,7 @@ let getGames=async(url)=>{
   setLoading(true)
   let {data}=await axios.get(url,{
     headers: {
-      'X-RapidAPI-Key': '3db15bfa4cmshd52830e7c24571bp18870djsne4d7db060157',
+      'X-RapidAPI-Key':process.env.REACT_APP_RAPIDAPI_KEY,
       'X-RapidAPI-Host': 'free-to-play-games-database.p.rapidapi.com'
     }
   })

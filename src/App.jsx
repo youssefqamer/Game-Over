@@ -1,4 +1,4 @@
-import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom';
+import {createHashRouter, Navigate, RouterProvider } from 'react-router-dom';
 import './App.css';
 import Masterlayout from './Components/Masterlayout/Masterlayout';
 import Home from './Components/Home/Home';
@@ -30,7 +30,6 @@ import NotFound from './Components/NotFound/NotFound';
 
 
 function App() {
-  
   const [userdata, setuserdata] = useState(null)
   let saveUserdata=()=>{
   let encodedToken= localStorage.getItem('token')
@@ -48,7 +47,7 @@ let logout=()=>{
   return <Navigate to='login'/>
 }
 
-let routes=createBrowserRouter([
+let routes=createHashRouter([
   {path:'',element:<Masterlayout userdata={userdata} logout={logout}/>,children:[
     {index:true,element:<Protecteroute userdata={userdata}><Home/></Protecteroute>},
     {path:'all',element:<Protecteroute userdata={userdata}><All/></Protecteroute>},
